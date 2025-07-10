@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Website</title>
+    </head>
+    <body>
+        <h1>This is a cute cat</h1>
+        <!--Bilder einfügen mit self closing tag img,
+        Davor am besten das Bild in einen hier erstellten "images" Ordner reinziehen.
+        Beim Pfad kommt dann der Ordnername davor, ggf vor dem Ordner ein weiteres "/".
+        Man kann ein Bild als hyperlink machen wenn um das img die a tags sind.
+        Attribut height auf 200 pixel zb, width wird automatisch angepasst bzw. behält das Bild die Proportionen
+        andernfalls kann man zusätzlich width bestimmen, das Seitenverhältnis kann sich aber ändern,
+        alt zeigt einen alternativen Text an, falls das Bild nicht angezeigt werden kann
+        (zb wenn man falschen Dateinamen, Endung, Pfad usw geschrieben hat)
+        Außerdem: Beim Screenreader wird dieser Text vorgelesen (=barrierefrei)
+        -->
+        <a href="https://de.wikipedia.org/wiki/Hauskatze">
+            <img src="images/cat.jpg"
+            alt="This is a picture of a cat"
+            height="200">
+        </a>
+        <!--das ist ein gif-->
+        <img src="images/surprised_cat.gif" alt="surprised cat gif">
+        <h3>meow meow!</h3>
+    </body>
+</html>
