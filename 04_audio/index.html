@@ -10,13 +10,15 @@
 <body>
     <p>For Our Friends</p>
     <!--controls für einen Player zum abspielen, vorspulen usw
-    mit dem Attribut autoplay kann man das Lied automatisch abspielen lassen
+    Mit dem Attribut autoplay kann man das Lied automatisch abspielen lassen
     (kann aber User nerven), daher kann man auch muted ergänzen, dann kann man es selbst entmuten
     Mit loop beginnt das Lied von vorne nachdem es fertig gespielt worden ist-->
     <audio controls autoplay muted loop>
-        <!--<source src="For Our Friends.mp3">-->
+        <!--für das Testen kann man auf sein Profil oben rechts in Youtube klicken,
+        dann auf Youtube Studio, dann links im Menü auf Audio-Mediathek und sich
+        kostenlos ein paar Lieder herunterladen-->
         <!--falls der Browser den Datentyp nicht kennt, kann man eine zweite Quelle angeben
-        außerdem zu empfehlen, dem Browser nochmal spezifisch den Datentyp mit type mitzuteilen-->
+        Außerdem zu empfehlen, dem Browser nochmal spezifisch den Datentyp mit type mitzuteilen-->
         <source src="music/For Our Friends.mp3" type="audio/mpeg">
         <source src="music/For Our Friends.wav" type="audio/wav">
     </audio>
