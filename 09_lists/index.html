@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--es gibt 3 verschiedene Arten von Listen-->
+
+    <!-- Unordered List -->
+    <h4>Groceries</h4>
+    <!--Listen, deren Reihenfolge egal sind, also eine einfache Auflistung-->
+    <ul>
+        <!--innerhalb der Listen sind Listenelemente (li für list item)-->
+        <li>milk</li>
+        <li>eggs</li>
+        <li>bread</li>
+        <li>coffee supplies</li>
+        <!--nested lists = eine Liste in einer Liste bzw eine Unterliste,
+        das wird auch durch die automatische Versetzung nochmal verdeutlicht-->
+        <ul>
+            <li>coffee beans</li>
+            <li>creamer</li>
+            <li>sugar</li>
+        </ul>
+    </ul>
+
+    <!-- Ordered List -->
+    <h4>To do list</h4>
+    <!--ähnlich die unordered list nur werden die Elemente darin nummeriert-->
+    <ol>
+        <li>eat breakfast</li>
+        <li>go to class</li>
+        <li>walk dog</li>
+        <li>work</li>
+    </ol>
+
+    <!-- Description List -->
+     <h4>Mythical creatures</h4>
+    <!--ist eine key value pairs list, dh aus einer description term (dt)
+    und zur jeweiligen term gehört eine description definition (dd) dazu-->
+    <!--hier noch eine weitere Eigenschaft im Attribut style hinzugefügt,
+    die Eigenschaften werden Semikolon-separariert hintereinander geschrieben
+    Außerdem: inline styles haben eine höhere Priorität ggü styles aus CSS Dateien!
+    Dh diese überschreiben die styles aus der CSS Datei, daher das berücksichtigen oder direkt alles in einer CSS Datei,
+    vor allem bei größeren Projekten-->
+    <dl style="background-color: lightgreen; border: 2xp solid;">
+        <dt>dragon</dt>
+        <dd>(in Sage und Märchen auftretendes) großes, furchterregendes, meist geflügeltes, Feuer speiendes Tier.</dd>
+        <dt>phoenix</dt>
+        <dd>(zum Sinnbild der Unsterblichkeit gewordener) Vogel, der sich selbst verbrennt und aus der Asche verjüngt aufsteigt.</dd>
+        <dt>vampire</dt>
+        <dd>(nach dem Volksglauben) Toter, der nachts als unverwester, lebender Leichnam dem Sarg entsteigt, um Lebenden, besonders jungen Mädchen, Blut auszusaugen, indem er ihnen seine langen Eckzähne in den Hals schlägt.</dd>
+        <dt>werewolf</dt>
+        <dd>(im alten Volksglauben) Mensch, der sich von Zeit zu Zeit in einen Wolf verwandelt und andere Menschen bedroht.</dd>
+    </dl>
+    
+</body>
+</html>

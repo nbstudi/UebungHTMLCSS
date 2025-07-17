@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Beim Klick auf den Button zb mit einer Seite verlinken-->
+    <!--<a href="https://google.de">-->
+    <!--Oder auf eine andere HTML Seite weiterleiten-->
+    <a href="page2.html">
+        <!--color ist die Schriftfarbe
+        border-radius rundet die Ecken ab, je höher die Zahl desto runder-->
+        <button style="font-size: 25px; background-color:grey; color:lightblue; border-radius:25px;">click me</button>
+    </a>
+
+    <br>
+    <br>
+
+    <!--jeder Button hat ein onclick Attribut, da kann man dann eine javascript Funktion hinterlegen,
+    diesen Funktionsnamen schreibt man dann dahinter-->
+    <!--Achtung: moderner und besser wären Event Listener, hier versehen wir den Button mit einem
+    eindeutigen Bezeichner und können auch mehrere Event Listener für den oder mehrere Buttons definieren,
+    außerdem bleibt die HTML frei von Logik bzw ist das sauber getrennt,
+    JavaScript wird aber später behandelt und dann genauer auf das eingegangen.-->
+    <button onclick="doSomething()" style="font-size: 25px; background-color:grey; color:lightblue; border-radius:25px;">change text</button>
+
+    <!--für die Funktion müssen wir einen Selektor hinzufügen, zb eine ID,
+    um ein Element genau identifizieren zu können-->
+    <p id="greeting">Hello</p>
+
+    <!--die Funktion muss im script tag drin sein-->
+    <!--Übrigens: Die Funktion ändert den Text einmalig, mehr haben wir nicht definiert,
+    dass beim nochmaligen Klicken der Text zurück geändert wird (Zustände sind dann relevant)-->
+    <script>
+        function doSomething(){
+            //hier kommentiert man so, wenn mehrzeilig dann so: /*mehrzeiliger Text*/
+            //document ist die HTML Seite, dann suchen wir mit der nachfolgenden Methode
+            //das Element mit der ID "greeting" und die Eigenschaft innerHTML gibt den gesamten Inhalt dieses Elements zurück.
+            //diesen Inhalt ersetzen wir dann durch einen Neuen, in dem Fall von "Hello" zu "Goodbye"
+            document.getElementById("greeting").innerHTML = "Goodbye";
+        }
+    </script>
+</body>
+</html>

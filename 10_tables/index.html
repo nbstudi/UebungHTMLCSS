@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h3>Store Hours</h3>
+
+<!--Rahmen für die Tabelle, je größer die Zahl desto dicker, bei 0 -> kein Rahmen, sonst weglassen-->
+<!--Achtung: border="1" ist die veraltete Schreibweise! Das ist ein veraltetes HTML Attribut (Präsentationsattribut)
+Das wurde früher verwendet um direkt zu stylen ohne CSS. Es funktioniert noch, da HTML abwärtskompatibel ist um alte Webseiten
+noch darstellen zu können, aber HTML5 empfiehlt das nicht mehr weil:
+-schlecht wartbar
+-nicht responsiv
+-Screenreader und Barrierefreiheit leiden darunter
+
+besser: mit CSS Eigenschaft -> style="border: 100px"-->
+<table border="1" style="background-color: black;">
+    <!--tr für table row-->
+    <!--align für Ausrichtung, man kann auch rechts- oder linksbündig machen (mit right oder left)-->
+    <!--besser: style="text-align: center"-->
+    <tr align="center" style="background-color: lightblue;">
+        <!--die Reihe/Zeile hat dann th für headers, das sind die Spaltenüberschriften-->
+        <!--besser: style="width: 100px"-->
+        <th width="100">Sunday</th>
+        <th width="100">Monday</th>
+        <th width="100">Tuesday</th>
+        <th width="100">Wednesday</th>
+        <th width="100">Thursday</th>
+        <th width="100">Friday</th>
+        <th width="100">Saturday</th>
+    </tr>
+    <tr align="center" style="background-color: aliceblue;">
+        <!--in den folgenden Zeilen folgen die Daten in den Zeilen, td für table data-->
+        <td>Closed</td>
+        <td>9-5</td>
+        <td>9-5</td>
+        <td>9-5</td>
+        <td>9-5</td>
+        <td>9-5</td>
+        <td>10-2</td>
+    </tr>
+</table>
+</body>
+</html>

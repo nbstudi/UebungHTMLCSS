@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- GROUP TOGETHER HTML -->
+    <!-- <span> inline container to group elements for styling purposes -->
+    <!-- <div> block container to group elements for styling purposes -->
+    
+    <!--innerhalb des span tags kann man mit dem Attribut "style" zb die Eigenschaft
+    background-color ändern-->
+    <h1><span style="background-color: tomato;">This is a span title</span></h1>
+    
+    <!--da Hintergrundfarbe im block level container ist, zieht sich die Farbe
+    über die gesamte Breite im Gegensatz zum inline container bei span-->
+    <h1><div style="background-color: cyan;">This is a div title</div></h1>
+
+    <p><span style="background-color: tomato;">This is a span sentence</span></p>
+    <p><div style="background-color: cyan;">This is a div sentence</div></p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span style="background-color: tomato;">Eius iure, ipsum veritatis libero perferendis eum natus ullam modi unde doloribus facilis obcaecati ad ducimus architecto, corporis nam officia tempore voluptas.</span></p>
+    <!--hier wird der Text in die nächste Zeile verschoben, da dieser Inhalt ja einen eigenen Block braucht,
+    der eingefärbt wird, bzw nicht mittendrin in einen anderen Bereich, da es sonst kein Blockelement mehr ist-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, molestiae. Aut tenetur blanditiis dolorem explicabo? <div style="background-color: cyan;">Iure architecto unde minus, suscipit libero eaque ex impedit voluptates velit. Distinctio, saepe. Delectus, perspiciatis!</div></p>
+
+</body>
+</html>
