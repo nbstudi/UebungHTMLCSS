@@ -6,3 +6,12 @@ Nachschlagen aus den Übungen:
 
 Übung 6 (favicon):
 - warum wird favicon nicht bei Safari angezeigt?
+
+Übung 12 (forms):
+- tel Feld mit Smartphone testen bzgl des Nummernfeldes
+- RegEx zuende behandeln?!
+
+
+
+Später:
+- wenn CSS kommt, kebab-case erwähnen

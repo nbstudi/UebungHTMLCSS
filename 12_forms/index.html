@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--form für Formular. In einem Formular sind form-Elemente - zb Textfelder, Checkboxen, Radiobuttons usw.
+    Damit kann man Benutzereingaben zb erfassen und diese zb an einen Server schicken.
+    Mit dem Attribut action definieren wir, wohin die Daten gesendet werden. Das kann an irgendein Backend gesendet werden,
+    das kann zb index.php heißen (hier nur exemplarisch. Außerdem ist PHP auch veraltet, moderner und stabiler wären NodeJS oder ASP.NET).
+    Mit method definiert man, wie man Daten überträgt, entweder über GET oder POST,
+    (letzteres ist vor allem für sensible Daten wie Benutzernamen und Passwörter)-->
+    <form action="index.php" method="POST">
+        <!--vor den Elementen sollte am besten ein label stehen, damit der User überhaupt weiß,
+        wofür dieses Element steht oder was er einzugeben hat, sonst sieht er einfach nur ein Textfeld ohne Beschreibung.
+        
+        AUßERDEM: für bessere Usability und Barrierefreiheit, verknüpft man das label mit dem dazugehörigen
+        Element. Dazu braucht man das for Attribut beim Label und das id Attribut beim Element mit identischen Attributwerten!
+        Sobald diese verknüpft sind, kann man auch auf das Label klicken und man springt automatisch auf das zugehörige Element.-->
+        <label for="username">username:</label>
+        <!--das form-Element input (self closing) ist standardmäßig ein Textfeld,
+        man kann aber mit type spezifizieren ob es ein Passwort, E-Mail oa sein soll.
+        Das Attribut required wird durch den submit Button (s.u.) getriggert und es wird
+        überprüft ob dieses Feld leer ist oder nicht, wenn ja, dann kommt eine Meldung,
+        ansonsten wird das Formular abgesendet.
+
+        Generell werden alle Felder innerhalb dieser Form beim Klicken des Submit Buttons (muss in der selben form liegen) überprüft,
+        ob sie gültig/valide sind (also zb auch richtiges Format bei einer E-Mail, Mindestlänge eingehalten etc),
+        erst wenn alles gültig, wird das Formular abgesendet.
+        
+        Manche Attribute wie maxlength kontrollieren schon während der Eingabe, sodass nicht mehr als die angegebene
+        Maximallänge eingegeben werden kann, ohne es durch den submit Button triggern zu müssen.
+        
+        Placeholder zeigt eine Beispieleingabe, diese ist ausgegraut und verschwindet dann bei Eingabe-->
+        <input type="text" id="username" minlength="6" maxlength="15" placeholder="Spongebob" required>
+        <br>
+        <label for="password">password:</label>
+        <!--das Feld password hat die Besonderheit, dass die Eingabe nicht als Klartext angezeigt wird,
+        sondern durch Punkte dargestellt wird, um die Eingabe visuell zu schützen-->
+        <input type="password" id="password">
+        <br>
+        <label for="email">email:</label>
+        <input type="email" name="" id="email">
+        <br>
+        <label for="phone">phone:</label>
+        <!--Das Feld vom Typ tel unterscheidet sich von einem normalen Textfeld insofern,
+        dass bei einem Smartphone zb das Ziffernfeld aufploppt. (habe ich noch nicht getestet)
+        Bei pattern wird ein Muster definiert (= Regular Expression = RegEx).
+        Alles in den Anführungsstrichen wird literal(wortwörtlich) genommen,
+        innerhalb der eckigen Klammern wird eine Zeichenklasse definiert, in dem Fall eine Ziffer zwischen 0 bis 9,
+        die geschweiften Klammern beziehen sich immer auf das vorherige Element und bestimmen, wie oft das vorherige Zeichen wiederholt werden muss.
+        
+        Ganz konkret: wir erlauben hiermit 3 Ziffern zwischen 0 und 9, daraufhin folgt literal der Bindestrich,
+        danach nochmal 3 Ziffern, ein weiterer Bindestrich und danach 4 Ziffern-->
+        <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <br>
+        <!--Der submit Button, s. Erklärung oben-->
+        <input type="submit">
+        <br>
+        <input type="reset">
+        <br>
+        <input type="text" pattern="..">
+
+    </form>
+</body>
+</html>
