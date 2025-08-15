@@ -10,8 +10,9 @@ Nachschlagen aus den Übungen:
 Übung 12 (forms):
 - tel Feld mit Smartphone testen bzgl des Nummernfeldes
 - RegEx zuende behandeln?!
-
-
+- name Attribut bei den restlichen Feldern ergänzen?
+----------------------------------------------------------------------------------------
+CSS beginnt bei Übung 14.
 
 Später:
 - wenn CSS kommt, kebab-case erwähnen
