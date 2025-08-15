@@ -28,6 +28,7 @@ Wenn du wirklich ein gutes Grundverständnis aufbauen willst (was bei dir fast s
 🔶 [^...] (Negierte Zeichenklassen)
 Und dann kannst du sagen: “Ich kann reguläre Ausdrücke.”
 
+- name Attribut bei den restlichen Feldern ergänzen?
 -----------------------------------------------------------------------------------------------------------------------------
 
 Exkurs zu enctype:

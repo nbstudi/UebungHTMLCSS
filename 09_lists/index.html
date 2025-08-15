@@ -26,6 +26,21 @@
         </ul>
     </ul>
 
+    <!--BESSER: Nested-Lists sollten besser Kind des letzten li Elements sein, das ist semantisch besser:
+    <ul>
+        <li>milk</li>
+        <li>eggs</li>
+        <li>bread</li>
+        <li>coffee supplies
+            <ul>
+                <li>coffee beans</li>
+                <li>creamer</li>
+                <li>sugar</li>
+            </ul>
+        </li>
+    </ul>
+    -->
+
     <!-- Ordered List -->
     <h4>To do list</h4>
     <!--ähnlich die unordered list nur werden die Elemente darin nummeriert-->
@@ -41,11 +56,11 @@
     <!--ist eine key value pairs list, dh aus einer description term (dt)
     und zur jeweiligen term gehört eine description definition (dd) dazu-->
     <!--hier noch eine weitere Eigenschaft im Attribut style hinzugefügt,
-    die Eigenschaften werden Semikolon-separariert hintereinander geschrieben
+    die Eigenschaften werden Semikolon-separiert hintereinander geschrieben
     Außerdem: inline styles haben eine höhere Priorität ggü styles aus CSS Dateien!
     Dh diese überschreiben die styles aus der CSS Datei, daher das berücksichtigen oder direkt alles in einer CSS Datei,
     vor allem bei größeren Projekten-->
-    <dl style="background-color: lightgreen; border: 2xp solid;">
+    <dl style="background-color: lightgreen; border: 2px solid;">
         <dt>dragon</dt>
         <dd>(in Sage und Märchen auftretendes) großes, furchterregendes, meist geflügeltes, Feuer speiendes Tier.</dd>
         <dt>phoenix</dt>

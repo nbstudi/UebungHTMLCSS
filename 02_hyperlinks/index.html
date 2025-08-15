@@ -6,7 +6,16 @@
     <body>
         <!--hyperlink (hier ein bsp mit einem absolute URL) mit einem a tag (für anker), dieser öffnet sich im selben Fenster
         Mit dem target Attribut öffnet man diesen Link (je nach Einstellung) in einem neuen Fenster oder Tab
-        Weitere Attribute: title = zeigt einen Hinweis den man definiert hat beim Hovern über diesem Link-->
+        Weitere Attribute: title = zeigt einen Hinweis den man definiert hat beim Hovern über diesem Link.
+        
+        Vorsicht: target=_blank sollte immer mit rel="noopener noreferrer" kombiniert werden.
+        Sonst läuft man Gefahr auf Reverse Tabnapping.
+        Bsp.: Man ist auf einer gutartigen Webseite, zb ein Forum. Nun stellt jmd einen Link zur Verfügung, dass man da reinschauen soll was auch immer.
+        Wenn das ein bösartiger Link ist, dann kann der neue Tab/Fenster per JavaScript ursprüngliches Fenster (auf das windows.opener Objekt) zugreifen.
+        Jetzt kann der Angreifer, die URL ändern aber dich auf eine andere Seite umleiten, die genauso aussieht wie die ursprüngliche Seite
+        und dich zb nochmal aufforden deine Login Daten einzugeben und so Daten von dir abgreifen (Stichwort Phishing).
+        Mit noopener verhindert man dass das neue Fesnter window.opener sieht -> kein Zugriff mehr möglich.
+        Zusätzlich verhindert noreferrer dass die Referrer-URL nicht mitgesendet wird. (der Angreifer weiß nicht von welcher Seite du kommst)-->
         <a href="https://www.google.de"
         target="_blank"
         title="Goes to google">
@@ -22,5 +31,30 @@
         <a href="mailto:test@fake.com">
             email me
         </a>
+        <br>
+        <!--Man kann das auch weiter ausbauen. Aktuell öffnet der Link das Standard-Mailprogramm mit einer neuen Nachricht an diese E-Mail Adresse.
+        Man kann aber noch weitere Parameter anfügen, zb mit
+        - subject für Betreffzeile
+        - body für Textkörper der Nachricht
+        - cc für Kopie an weitere Empfänger (komma separiert bei mehreren)
+        - bcc für Blindkopie an weitere Empfänger
+        
+        Bsp.:-->
+        <a href="mailto:max@mustermann.de
+                ?subject=Anfrage%20von%20Studibuch
+                &body=Hallo%20Max,%0A%0Aich%20habe%20folgende%20Frage:%0A
+                &cc=test@blabla.de,test2@blub.de">
+                email me again
+            </a>
+        <!--Aufbau ist folgender:
+        - der erste Parameter nach der Email Adresse wird mit einem Fragezeichen getrennt
+        - nach dem Gleichheitszeichen folgt der Inhalt des Betreffs
+        - Leerzeichen werden mit %20 geschrieben (percent encoding oder URL Encoding genannt)
+        - weitere Parameter werden mit einem & Symbol angefügt
+        - %0A stellt eine Leerzeile bzw einen Zeilenumbruch dar (mehrere hintereinander für mehrere Zeilenumbrüche)
+        - Doppelpunkt, Komma und das @ Symbol bleiben (kann man aber auch escapen, zb &2C für das Komma)
+        - andere Sonderzeichen oder Umlaute außerhalb des ASCII-Bereichs wird UTF-8 Codierung benutzt und ein % vor jedem Byte, einem Hexadezimalwert, gesetzt-->
+
+
     </body>
 </html>

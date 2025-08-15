@@ -17,6 +17,9 @@
     Nur so kann das Bild richtig übertragen werden, andernfalls werden die Bytes im Standardformat in einen Textstring umgewandelt,
     das funktioniert zwar problemlos für Textdaten, kann aber bei Binärdaten zu Problemen führen.
     Ausführliche Erklräung in der Notiz.
+
+
+    WICHTIG?!: normalerweise muss überall das Attribut name stehen? Sonst wird das nicht mitgesendet = keine Daten im Request.
     -->
     <form action="index.php" method="POST" enctype="multipart/form-data">
         <!--vor den Elementen sollte am besten ein label stehen, damit der User überhaupt weiß,
@@ -63,11 +66,6 @@
         <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
         <br>
 
-        <!--
-        radio buttons name und value
-        text area rows und cols
-        -->
-
         <!--Bei Date kann man nur im tt.mm.jjj Format eingeben (oder es wird so angepasst),
         außerdem kann man auf das kleine Kalendersymbol klicken und das Datum auch auswählen.-->
         <label for="bday">birthdate:</label>
@@ -76,11 +74,22 @@
 
         <!--Hier kann man Zahlen eingeben oder mit den Pfeilsymbolen, die Zahl verringern oder erhöhen,
         dabei kann man optional mit den Attributen min oder max bestimmen ob die Zahl nicht kleiner
-        und oder nicht größer sein darf als den festgelegten Bereich.-->
+        und oder nicht größer sein darf als den festgelegten Bereich.
+        
+        Übrigens kann man mit dem Attribut "step" definieren, in welchen Schritten hoch-/runtergezählt wird,
+        zb step="0.5" zählt in halben Schritten hoch. Standardweise wird in Einser Schritten gezählt.-->
         <label for="quantity">quantity</label>
         <input type="number" id="quantity" min="0" max="99">
         <br>
 
+        <!--Radiobuttons:
+        Hier ist es ja so, dass man nur eins von mehrere aktivieren kann/soll. Daher müssen die Radio Buttons zu einer Gruppe gehören.
+        Hier geht es zb um den Titel. Alle Buttons die dazugehören müssen das Attribut name mit dem Wert title tragen.
+        (gruppiert man die Buttons nicht, kann man alle gleichzeitig auswählen, was hier wenig sinnvoll wäre).
+        Weitere Besonderheit: Wenn der Radiobutton aktiviert ist, enthält er nur die Information ob er "on" oder "off" ist,
+        man weiß aber nicht welcher Wert dazugehört bzw dahinter stecken soll, da es nur ein boolescher Wert ist,
+        im Gegensatz zu anderen Feldern, wo der Wert im Eingabefeld reingeschrieben wird wie beim usernamen zb.,
+        daher muss man mit value einen Wert zuweisen.-->
         <label for="title">title:</label>
 
         <label for="Mr.">Mr.</label>
@@ -102,11 +111,21 @@
         </select>
         <br>
 
-        <!--Checkbox.-->
+        <!--Checkbox.
+        Fehlt hier nicht auch value (zb vaule=yes)? Und name soll auch fehlen, weil beim Absenden würde nichts mitgeschickt werden,
+        egal ob angehakt oder nicht weil kein Eintrag im Request. (wenn angehakt ist dann bekommt man beim Absenden subscribe=yes, andernfalls nichts)-->
         <label for="subscribe">subscribe:</label>
         <input type="checkbox" id="subscribe" >
         <br>
 
+        <!--Textfeld. Mit rows und cols bestimmt man wie hoch und breit das Textfeld ist,
+        in diesem Fall 3 Zeichen hoch und 25 Zeichen breit (man hat damals die Größe der Monospace Schrift genommen).
+        Heutzutage verwendet man aber eher CSS, also:
+        textarea {
+            width: 300px;
+            height: 80px;
+        }
+        -->
         <label for="comment">comment:</label>
         <textarea id="comment" rows="3" cols="25"></textarea>
         <br>
@@ -116,12 +135,11 @@
         es sei denn man legt fest, welche Dateiformate akzeptiert werden sollen.
         Mehrere Dateitypen werden kommasepariert aufgelistet.
         
-        ²Achtung: Wenn Dateien gesendet werden, dann MUSS im -->
+        ²Achtung: Wenn Dateien gesendet werden, dann MUSS im opening form tag enctype="multipart/form-data" stehen, s.o. für mehr Infos.-->
         <label for="file">file:</label>
         <input type="file" id="file" accept="image/png, image/jpeg">
-
-
         <br>
+
         <!--Der submit Button, s. Erklärung oben¹-->
         <input type="submit">
         <br>
