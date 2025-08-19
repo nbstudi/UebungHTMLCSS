@@ -1,0 +1,112 @@
+<!--Das ist ein Kommentar-->
+<!--bzw alles in diesem Bereich ist ein Kommentar,
+also auch Zeilenumbrüche
+
+oder Abstände oder was weiß ich für ein Inhalt möglich.
+Einzige Einschränkung ist, dass man nicht innerhalb der tags selbst oder
+in Attributen kommentieren kann.
+Auch ein Kommentar in einem Kommentar geht nicht, bzw würde der neue innere Kommentar den äußeren Kommentar vorzeitig beenden,
+weil vor einem neuen Kommentar, der vorherige Kommentar endet.-->
+
+<!--HTML = Hypertext Markup Language
+Hypertext = Text der nicht linear sein muss sondern durch Links (Hyperlinks) auch auf zb andere Abschnitte
+von Text springen kann.
+Markup = für Auszeichnen, heißt, man markiert/versieht Text mit entsprechenden HTML tags, um zu definieren was eine Überschrift ist
+oder was ist ein Abschnitt usw usw.
+
+Also welche semantische Bedeutung welcher Text hat. Das dient zur Strukturierung und hilft später bei CSS
+gezielt Elemente zu stylen, weil man weiß welcher Text für was steht.
+(Nebeninfo: Markdown = ist auch eine Markup Sprache, aber sehr vereinfacht, schnelles grobes Formatieren ohne tags.
+zb "# Überschrift 1" ist wie die h1 Überschrift bei HTML, "# Überschrift 2" ist wie h2.
+Fetter oder kursiver Text würde so aussehen: "**hier ist der Text fett**", "*hier ist kursiver Text drin*".)
+
+
+VS Code Shortcut: wenn man "!!" eingibt, dann kommt direkt DOCTYPE bla
+Wenn man nur ein "!" eingibt, dann kommt der Grundaufbau.
+
+
+-----------------------------------------------------------------------------------------------------------
+Damit der Browser weiß, dass es sich um ein HTML Dokument handelt schreibt man bei DOCTYPE html hin.
+So wird der Standardmode aktiviert, dh der Browser interpretiert das Dokument nach aktuellen Webstandards.
+
+WICHTIG:
+Das ist die allererste Zeile! Wenn diese fehlt, dann wird der Quirks Mode aktiviert.
+Die Seite wird dann zwar angezeigt aber oft funktionieren viele CSS-Eigenschaften nicht oder nicht richtig
+(Passiert auch bei sehr altem Doctype Typ).
+
+AUßERDEM:
+Mit "<!" am Anfang, symbolisiert man dem Browser, dass er dieses Element nicht als HTML Element ansieht,
+sondern als eine Sonderanweisung. Die zwei bekannten Fälle (andere sind veraltet/nicht mehr relevant) dafür sind "<!DOCTYPE>" und dem Kommentar-Tag,
+welches sich aus "<!" und "--" zusammensetzt und das Ende mit "--" und ">" symbolisiert wird, alles dazwischen gilt als Kommentarinhalt.
+(Ich musste die Zeichen getrennt schreiben, da ja Kommentare in Kommentaren nicht funktionieren).-->
+<!DOCTYPE html>
+<!--Hier beginnt dann das HTML Dokument.
+Ein HTML Element besteht aus HTML tags. Entweder besteht dieses aus einem opening und einem closing tag
+(zb <body> und </body> für das body Element), oder es besteht nur aus einem opening tag = self closing tag (zb <hr>).
+
+Innerhalb der tag Paare kann der Inhalt aus Text und/oder aus weiteren HTML Elementen bestehen.
+Attribute stehen immer im opening tag. Diese definieren die Eigenschaften dieses Elements.
+
+Die self closing tags stehen für sich selbst und haben keinen Inhalt oder tragen Attribute in sich.
+
+
+Wichtig für SEO oder Barrierefreiheit: welche Sprache dieses HTML Dokument hat, damit die Suchmaschinen es besser verstehen
+und auch Screenreader in der richtigen Sprache vorlesen können oder die Browser-Rechtschreibung richtig funktioniert.
+Hier im html tag steht lang="de" (lang für language) und "de" für Deutsch.-->
+<html lang="de">
+    <!--Im head stehen die Meta Daten des HTML Dokuments drin, also die Eigenschaften.
+    - charset => welcher Zeichensatz unterstützt wird.
+    - viewport => WICHTIG:  hier ist der sichtbare Bereich der Webseite der auf dem Gerät angezeigt wird gemeint,
+                            hier greift man dann auf die Breite zu mit width von content und sagt,
+                            mit device-width, dass sich der Inhalt auf die Gerätbreite anpassen soll
+                            und mit initial-scale=1.0 dass nicht gezoomt wird.
+                            So passt sich der Inhalt responsiv an.
+
+                            Macht man das nicht, dann versucht das Smartphone die gesamte Seite auf den kleinen
+                            Bildschirm darzustellen und zoomt unnötig raus und macht den Inhalt zu klein zum Lesen
+                            (da Viewport beim Monitor breit und beim Smartphone schmal ist).
+    - title => zeigt den Titel an der oben im Browser-Tab angezeigt wird.
+    
+    (es gibt noch "link" um zb CSS oder Favicon einbinden zu können oder "script" um JavaScript einzubinden,
+    das script steht aber oft am Ende des bodys, damit die Webseite erst schnell und sauber gerendert werden kann,
+    bevor Skript/Code ausführt wird)
+     -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Website</title>
+    </head>
+    <!--Im body sehen wir nun den eigentlichen Inhalt der Webseite.-->
+    <body>
+        <!--je größer die Zahl desto kleiner die Überschrift, aber hier geht es weniger um die Größe,
+        da man den Style sowieso über CSS regelt, sondern eher um die Bedeutung/Relevanz, dass h1 die Hauptüberschrift ist usw usw-->
+        <h1>H1 Überschrift</h1>
+        <h2>h2 Überschrift</h2>
+
+        <!--für horizontale Trennlinie, ist ein self closing tag-->
+        <hr>
+
+        <!--innerhalb des paragraph tags werden mehrere Leerzeichen und Zeilenumbrüche ignoriert
+        Wenn man diese haben möchte, dann muss man das "pre" tag (für preformatted) verwenden-->
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Rem suscipit esse ducimus repellat, unde labore?
+            Aspernatur optio, ipsum porro amet ipsa iusto natus, dolorum quis repudiandae enim at, rerum officiis!
+        </p>
+        
+        <!--br für Zeilenumbrüche, ebenfalls self closing tag-->
+        <br>
+
+        <!--VS Code Shortcut: lorem + Tabulatortaste ergibt ein Beispieltext,
+        wenn man lorem200 + Enter eingibt, dann kommt der Beispieltext mit 200 Zeichen, Länge kann man beliebig wählen-->
+        <pre>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Rem suscipit esse ducimus repellat, unde labore?
+Aspernatur optio,
+ipsum porro amet ipsa iusto natus,
+dolorum quis repudiandae enim at,
+rerum officiis!
+        </pre>
+
+    </body>
+</html>

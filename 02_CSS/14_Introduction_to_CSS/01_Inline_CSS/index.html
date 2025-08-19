@@ -1,0 +1,48 @@
+<!-- CSS = Cascading Style Sheets
+Cascading = Kaskade, wie ein Wasserfall
+Das bedeutet, dass mehrere CSS-Regeln gleichzeitig auf ein Element wirken können und es ein klares Prioritätssystem gibt:
+- Inline-Styles (direkt im HTML-Tag) haben höchste Priorität
+- IDs sind stärker als Klassen
+- Klassen sind stärker als einfache Tags (p, h1 usw.)
+
+Bei Gleichstand gewinnt die Regel, die weiter unten im Stylesheet steht.-->
+
+
+<!--Es gibt 3 Arten wie man CSS implementieren kann:-->
+<!-- Inline, Internal, External -->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--Inline CSS:
+Ist direkt im opening tag drin mit dem style Attribut. Alle Eigenschaften sind innerhalb eines Anführungsstriche-Paares drin.
+Dabei kommt zuerst die Eigenschaft in "kebab-case" (scherzhaft gemeint für dash-case, weil die Wörter mit einem Bindestrich verbunden sind und das wie ein Schaschlickspieß aussieht) geschrieben,
+danach folgt der Wert.
+Vorteil:
+Man kann schnell und gezielt ein Element stylen.
+Nachteil:
+Ist aber dafür schwerer wartbar und nicht wiederverwendbar und Design und Inhalt sind nicht sauber getrennt.-->
+
+<!--Farben auch mit anderen Werten außer dem Namen ausdrückbar,
+zb mit Hexwert (6 Hex Ziffern, dh 0-255 und A-F) "color: #808080" für "grey" oder "color: #FFFFFF" für "black",
+oder mit rgb (also den Rotanteil, Grünanteil und Blauanteil) "color: rgb(128, 128, 128)" für "grey",
+oder mit hsl (hue=Farbton, saturation=Sättigung in Prozent, light=Helligkeit in Prozent) "color: hsl(0, 0%, 50%)" für "grey".-->
+<body style="background-color: black;">
+
+    <!-- Mehrere Eigenschaften Semikolon separiert auflisten. Man kann mehrere Werte einer Eigenschaft Komma separiert auflisten,
+     wenn hier zb die erste Schriftart nicht verfügbar ist, wird die nächste genommen.
+     (Manche Eigenschaften nehmen aber auch mehrere Werte zb "margin: 10px 20px 30px 40px;", diese Werte stehen für oben, rechts, unten und links.)-->
+    <h1 style="color: grey; font-family: Arial, Helvetica, sans-serif;">This is my website</h1>
+
+    <!--Auch alles Inline CSS, alles in "white", nur anders ausgedrückt:-->
+    <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+    <p style="color: #ffffff;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+    <p style="color: rgb(255, 255, 255);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+    <p style="color: hsl(0, 0%, 100%);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+
+</body>
+</html>

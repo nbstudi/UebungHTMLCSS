@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Internal CSS:
+    Befindet sich innerhalb der HTML Datei im head innerhalb der style tags.
+    
+    Bei kleinen Projekten okay, weil alles an einem Ort ist, bei mehreren Seiten muss man
+    aber alles wieder kopieren weil nicht wiederverwendbar, weil die CSS nur innerhalb dieser HTML Datei gilt.
+    
+    Hier greift man dann auf die Selektoren zu, das können HTML Elemente (wie hier) sein, oder Klassen oder IDs.
+    Dann folgen geschweifte Klammern in denen sich dann eine oder mehrere Eigenschaften mit ihren Wert(en) befinden.-->
+    <style>
+        body {
+            background-color: black;
+        }
+        h1{
+            color: #808080;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            color: hsl(0, 0%, 50%);
+        }
+
+        /*ids und klassen auch hier drin möglich mit zb "#idname{}" oder ".klassenname{}".
+        Man kann davor auch nur bestimmte Elemente einer Klasse ansteuern "p.klassenname{}" oder "h1.klassenname{}" wenn h1 auch die klasse zugewiesen bekommen hat.
+        Man kann auch mehrere Elemente Komma separiert stylen zb "body, h1{}".*/
+    </style>
+</head>
+<body>
+
+    <h1>This is my website</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut magni, debitis numquam impedit voluptatem eaque soluta tempore quasi, pariatur placeat, natus ullam quae at. Quasi exercitationem fuga tempora quibusdam?</p>
+
+</body>
+</html>

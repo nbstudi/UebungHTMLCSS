@@ -1,0 +1,69 @@
+<!--RegEx Exkurs-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Test Formular-->
+    <form action="https://google.com" target="_blank">
+        <label>"a"</label>
+        <!--Nur das Zeichen a ist erlaubt-->
+        <input pattern="a">
+        <br>
+        <label>"."</label>
+        <!--Hier wird der Punkt nicht als ein Punkt interpretiert sondern steht für
+        irgendein beliebiges Zeichen.-->
+        <input pattern=".">
+        <br>
+        <label>".."</label>
+        <!--ich kann mehrere beliebige Zeichen haben bzw in dem Fall zwei Stück-->
+        <input pattern="..">
+        <br>
+        <label>".{2}"</label>
+        <!--Eleganter wäre aber die Wiederholung von Zeichen mit einer Anzahl zu definieren,
+        diese steht direkt dahinter in geschweiften Klammern-->
+        <input pattern=".{2}">
+        <br>
+        <label>"a{3}."</label>
+        <!--Hier wird 3x ein a und nur ein weiteres beliebiges Zeichen gefordert, da die 3 nur zum a gehört-->
+        <input pattern="a{3}.">
+        <br>
+        <label>"\."</label>
+        <!--Wenn ich wirklich das nur tatsächliche Punktsymbol (ähnlich wie bei *, ( und \)  möchte, dann muss ich es escapen,
+        indem man ein Backslash davor setzt. Der Backslash selbst lässt sich natürlich auch mit dem Backslash escapen,
+        falls man das escapen verhindern oder den Backslash als solches nutzen möchte.-->
+        <input pattern="\.">
+        <br>
+        <label>"[0-9]"</label>
+        <!--Innerhalb von eckigen Klammern spricht man von einer Zeichenklasse,
+        0-9 ist der Zeichenbereich innerhalb einer Zeichenklasse.
+        Zeichen innerhalb der Zeichenklasse werden als ODER behandelt,
+        dh nur EIN Zeichen innerhalb der Zeichenklasse ist erlaubt-->
+        <input pattern="[0-9]">
+        <br>
+        <label>"[2-7a-z]"</label>
+        <!--Hier habe ich zwei Zeichenbereiche in einer Zeichenklasse,
+        dh nur eine Zahl 2 bis 7 oder ein Kleinbuchstabe von a bis z sind erlaubt.-->
+        <input pattern="[2-7a-z]">
+        <br>
+        <label>"[A-F][3-8]a"</label>
+        <!--Wenn ich je ein Zeichen aus einem Zeichenbereich haben möchte,
+        brauche ich dementsprechend je eine Zeichenklasse.
+        Hier ein Beispiel bei der die Eingabe einen Großbuchstaben von A bis F UND eine Ziffer von 3 bis 8 UND ein kleines a beinhalten muss.-->
+        <input pattern="[A-F][3-8]a">
+        <br>
+        <label>"[a7T]"</label>
+        <!--Ich kann auch willkürlich irgendwelche Zeichen in einer Zeichenklasse definieren,
+        also es müssen keine Zeichenbereiche sein. Wie gehabt wird dann nur EINES von diesen Zeichen erlaubt.-->
+        <input pattern="[a7T]">
+        <br>
+
+
+        <button type="submit">Testen</button>
+    </form>
+
+</body>
+</html>

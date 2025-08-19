@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Hier greift man mit einem "." vor dem Klassennamen auf die Klasse zu:*/
+.odd{
+    color: blue;
+}
+
+.even{
+    color: pink;
+}

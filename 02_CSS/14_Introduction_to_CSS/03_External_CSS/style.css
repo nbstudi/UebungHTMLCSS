@@ -1,0 +1,39 @@
+/*In der CSS Datei sehen die Kommentare so aus.*/
+
+/*
+WICHTIG:
+Wenn in CSS mehrere styles auf dasselbe Element zeigen, so wird der Style folgendermaßen priorisiert:
+- Inline-Style (style="..." im Tag selbst) → höchste Priorität
+- ID-Selektor (#idname) → sehr hoch
+- Klassen-Selektor (.klassenname), Attribute oder Pseudoklassen → mittlere Priorität
+- Element-Selektor (div, p, h1 ...) → niedrige Priorität
+*/
+
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+p{
+    color: white;
+}
+*/
+
+/*Anstatt dass man auf das HTML Element zugreift, kann man auch auf die id zugreifen,
+diese muss man zuvor in der HTML Datei definieren und kann dann hier den ID Namen mit einem vorangestelltem #-Zeichen schreiben, um darauf zugreifen zu können.*/
+#p1{
+    color: red;
+}
+#p2{
+    color: orange;
+}
+#p3{
+    color: yellow;
+}
+#p4{
+    color: green;
+}
